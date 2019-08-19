@@ -15,26 +15,29 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import ReactDOM from "react-dom";
-import { createHashHistory } from "history";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
+const cardImagesStyles = {
+  cardImgTop: {
+    width: "100%",
+    borderTopLeftRadius: "calc(.25rem - 1px)",
+    borderTopRightRadius: "calc(.25rem - 1px)"
+  },
+  cardImgBottom: {
+    width: "100%",
+    borderBottomRightRadius: "calc(.25rem - 1px)",
+    borderBottomLeftRadius: "calc(.25rem - 1px)"
+  },
+  cardImgOverlay: {
+    position: "absolute",
+    top: "0",
+    right: "0",
+    bottom: "0",
+    left: "0",
+    padding: "1.25rem"
+  },
+  cardImg: {
+    width: "100%",
+    borderRadius: "calc(.25rem - 1px)"
+  }
+};
 
-// core components
-import Admin from "layouts/Admin.jsx";
-import RTL from "layouts/RTL.jsx";
-
-import "assets/css/material-dashboard-react.css?v=1.7.0";
-
-const hist = createHashHistory();
-
-ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route path='/admin' component={Admin} />
-      <Route path='/rtl' component={RTL} />
-      <Redirect from='/' to='/admin/dashboard' />
-    </Switch>
-  </Router>,
-  document.getElementById("root")
-);
+export default cardImagesStyles;

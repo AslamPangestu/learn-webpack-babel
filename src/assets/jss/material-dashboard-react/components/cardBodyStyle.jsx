@@ -15,26 +15,20 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
-import ReactDOM from "react-dom";
-import { createHashHistory } from "history";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
+const cardBodyStyle = {
+  cardBody: {
+    padding: "0.9375rem 20px",
+    flex: "1 1 auto",
+    WebkitBoxFlex: "1",
+    position: "relative"
+  },
+  cardBodyPlain: {
+    paddingLeft: "5px",
+    paddingRight: "5px"
+  },
+  cardBodyProfile: {
+    marginTop: "15px"
+  }
+};
 
-// core components
-import Admin from "layouts/Admin.jsx";
-import RTL from "layouts/RTL.jsx";
-
-import "assets/css/material-dashboard-react.css?v=1.7.0";
-
-const hist = createHashHistory();
-
-ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route path='/admin' component={Admin} />
-      <Route path='/rtl' component={RTL} />
-      <Redirect from='/' to='/admin/dashboard' />
-    </Switch>
-  </Router>,
-  document.getElementById("root")
-);
+export default cardBodyStyle;
